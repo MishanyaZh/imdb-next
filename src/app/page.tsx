@@ -1,12 +1,9 @@
-import React from 'react'
+import React from "react";
 
-type Props = {}
+type Props = {};
 
 const Home = async (props: Props) => {
+  return <div>this home page</div>;
+};
 
-  return (
-    <div>Home</div>
-  )
-}
-
-export default Home
+export default Home;
