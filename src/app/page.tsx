@@ -1,7 +1,9 @@
 import React from "react";
-const API_KEY = process.env.API_KEY;
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import Results from "@/components/Results";
+
+const API_KEY = process.env.API_KEY;
+const mainUrl = "https://api.themoviedb.org/3";
 
 type Props = { searchParams: Params };
 
@@ -10,7 +12,7 @@ const Home = async ({ searchParams }: Props) => {
 
   try {
     const res = await fetch(
-      `https://api.themoviedb.org/3${
+      `${mainUrl}${
         genre === "fetchTopRated" ? `/movie/top_rated` : `/trending/all/week`
       }?api_key=${API_KEY}&language=en-US&page=1`,
       { next: { revalidate: 10000 } }
