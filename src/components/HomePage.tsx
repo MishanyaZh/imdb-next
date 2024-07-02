@@ -1,11 +1,14 @@
 import React, { Suspense } from "react";
-import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import Results from "@/components/Results";
 import { API_KEY, mainUrl } from "@/app/constants";
 
-type Props = { searchParams: Params };
+type Params = { genre: string };
 
-const HomePage = async ({ searchParams }: Props) => {
+type PageProps = {
+  searchParams: Params;
+};
+
+const HomePage = async ({ searchParams }: PageProps) => {
   const genre = searchParams.genre || "fetchTrending";
 
   try {

@@ -2,14 +2,14 @@
 
 import React from "react";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+// import { useSearchParams } from "next/navigation";
 
 type Props = { title: string; param: string };
 
 const NavbarItem = ({ title, param }: Props) => {
-  const searchParams = useSearchParams();
-  const genre = searchParams.get("genre");
-
+  // const searchParams = useSearchParams();
+  // const genre = searchParams.get("genre");
+  const genre = "false";
   return (
     <Link
       className={`hover:text-amber-600 font-semibold
