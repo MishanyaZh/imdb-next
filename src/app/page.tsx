@@ -1,9 +1,7 @@
 import React from "react";
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import Results from "@/components/Results";
-
-const API_KEY = process.env.API_KEY;
-const mainUrl = "https://api.themoviedb.org/3";
+import { API_KEY, mainUrl } from "./constants";
 
 type Props = { searchParams: Params };
 
