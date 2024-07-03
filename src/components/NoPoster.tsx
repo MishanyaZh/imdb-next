@@ -1,15 +1,18 @@
 import React from "react";
 
 type Props = {
-  movieTitle: string;
+  movieTitle?: string;
+  resourceNotFound?: string;
 };
 
-const NoPoster = ({ movieTitle }: Props) => {
+const NotFound = ({ movieTitle, resourceNotFound }: Props) => {
   return (
-    <div className="text-orange-200 p-3 m-1 text-center border rounded-lg border-solid border-orange-200">
-      {`the movie "${movieTitle}" has no poster!`}
+    <div className="text-orange-200 p-3 m-1 flex items-center border rounded-lg border-solid border-orange-200">
+      {resourceNotFound
+        ? resourceNotFound
+        : `the movie ${movieTitle ? `"${movieTitle}"` : ""} has no poster!`}
     </div>
   );
 };
 
-export default NoPoster;
+export default NotFound;

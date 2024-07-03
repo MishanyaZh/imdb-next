@@ -3,7 +3,7 @@ import { imageMainUrl } from "@/app/constants";
 import Image from "next/image";
 import Link from "next/link";
 import { FiThumbsUp } from "react-icons/fi";
-import NoPoster from "./NoPoster";
+import NotFound from "./NoPoster";
 
 type Props = { result: any };
 
@@ -24,7 +24,7 @@ const Card = ({ result }: Props) => {
             priority={true}
           ></Image>
         ) : (
-          <NoPoster movieTitle={movieTitle} />
+          <NotFound movieTitle={movieTitle} />
         )}
         <div className="p-2">
           <p className="line-clamp-2 text-md">{result.overview}</p>

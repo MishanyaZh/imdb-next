@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { API_KEY, imageMainUrl, movieMainUrl } from "@/app/constants";
-import NoPoster from "@/components/NoPoster";
+import NotFound from "@/components/NoPoster";
 
 type Props = { params: { id: string } };
 
@@ -11,6 +11,7 @@ const MoviePage = async ({ params: { id } }: Props) => {
 
   const currentMoviePath = movie.backdrop_path || movie.poster_path;
   const movieTitle = movie.title || movie.name;
+  const resourceNotFound = !movie.status && movie.status_message;
 
   return (
     <div className="w-full">
@@ -26,8 +27,9 @@ const MoviePage = async ({ params: { id } }: Props) => {
             priority={true}
           ></Image>
         ) : (
-          <NoPoster movieTitle={movieTitle} />
+          <NotFound movieTitle={movieTitle} />
         )}
+        {resourceNotFound && <NotFound resourceNotFound={resourceNotFound} />}
         <div className="p-2">
           <h2 className="text-lg mb-3 font-bold">{movieTitle}</h2>
           <p className="text-lg mb-3">{movie.overview}</p>
