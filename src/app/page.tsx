@@ -1,19 +1,8 @@
-import React, { Suspense } from "react";
+import React from "react";
 import HomePage from "@/components/HomePage";
-import Loading from "./loading";
 
-type Params = { genre: string };
-
-type PageProps = {
-  searchParams: Params;
-};
-
-const Home = (props: PageProps) => {
-  return (
-    <Suspense fallback={<Loading />}>
-      <HomePage {...props} />
-    </Suspense>
-  );
+const Home = (props: any) => {
+  return <HomePage {...props} />;
 };
 
 export default Home;

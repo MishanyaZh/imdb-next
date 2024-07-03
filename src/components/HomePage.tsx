@@ -1,9 +1,8 @@
-import React, { Suspense } from "react";
+import React from "react";
 import Results from "@/components/Results";
 import { API_KEY, mainUrl } from "@/app/constants";
 
 type Params = { genre: string };
-
 type PageProps = {
   searchParams: Params;
 };
